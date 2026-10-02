@@ -91,6 +91,37 @@ background-size:auto,70px 70px,70px 70px;mask-image:linear-gradient(to bottom,bl
 @keyframes partner-sweep{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.cursor-dot,.cursor-ring{display:none}}
 
+
+/* V4 architecture: clear hierarchy, no crossing lines */
+.tech-visual{position:relative;height:470px;border:1px solid var(--line);border-radius:30px;background:
+radial-gradient(circle at 50% 50%,rgba(79,165,255,.14),transparent 34%),
+linear-gradient(145deg,#0b121b,#070b10);overflow:hidden}
+.tech-visual:before{content:"";position:absolute;inset:28px;border:1px solid rgba(255,255,255,.035);border-radius:24px;pointer-events:none}
+.arch-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.arch-svg path{fill:none;stroke:url(#archLine);stroke-width:1.5;stroke-linecap:round;stroke-dasharray:7 10;opacity:.7;animation:arch-flow 3.4s linear infinite}
+@keyframes arch-flow{to{stroke-dashoffset:-68}}
+.tech-visual .node{position:absolute;z-index:3;width:142px;min-height:92px;padding:16px 12px;border-radius:18px;border:1px solid rgba(255,255,255,.10);
+background:rgba(6,10,15,.92);text-align:center;backdrop-filter:blur(10px);
+box-shadow:0 16px 35px rgba(0,0,0,.20);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.tech-visual .node:hover{transform:translateY(-4px);border-color:rgba(79,165,255,.28);box-shadow:0 20px 45px rgba(0,0,0,.27)}
+.tech-visual .node.n3{width:162px;min-height:112px;padding:18px 14px;border-color:rgba(79,165,255,.38);box-shadow:0 0 55px rgba(79,165,255,.12),0 20px 50px rgba(0,0,0,.22)}
+.tech-visual .node .icon{width:28px;height:28px;margin:0 auto 9px;color:#9fcfff}
+.tech-visual .node .icon svg{width:100%;height:100%;display:block}
+.tech-visual .node b{display:block;font-size:10px;letter-spacing:.01em}
+.tech-visual .node span{display:block;margin-top:4px;font-size:9px;color:#778595}
+.tech-visual .n1{left:9%;top:10%}.tech-visual .n2{right:9%;top:10%}
+.tech-visual .n3{left:50%;top:50%;transform:translate(-50%,-50%)}
+.tech-visual .n4{left:9%;bottom:10%}.tech-visual .n5{right:9%;bottom:10%}
+.tech-visual .n3:hover{transform:translate(-50%,-54%)}
+.arch-caption{position:absolute;left:24px;bottom:20px;z-index:4;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#627285}
+@media(max-width:600px){
+  .tech-visual{height:525px}
+  .tech-visual .n1{left:5%;top:8%}.tech-visual .n2{right:5%;top:8%}
+  .tech-visual .n4{left:5%;bottom:8%}.tech-visual .n5{right:5%;bottom:8%}
+  .tech-visual .node{width:120px;min-height:88px;padding:13px 10px}
+  .tech-visual .node.n3{width:138px;min-height:102px}
+}
+
 </style>
 </head>
 <body><div class="scroll-progress"></div><div class="cursor-dot"></div><div class="cursor-ring"></div>
@@ -113,8 +144,70 @@ background-size:auto,70px 70px,70px 70px;mask-image:linear-gradient(to bottom,bl
 <section id="solucion" class="reveal"><div class="container two"><div><div class="kicker">El problema real</div><h2>Hay lugares que necesitás proteger antes de poder llevarles infraestructura.</h2><p class="copy">Un campo, una obra, un perímetro, un camino o una instalación temporal puede necesitar vigilancia mucho antes de que tenga energía y conectividad tradicional.</p></div>
 <div class="problem-cards"><div class="p"><b>⚡ ¿Dónde conecto la energía?</b><span>La instalación tradicional puede ser compleja o costosa.</span></div><div class="p"><b>📡 ¿Cómo llevo internet?</b><span>La cámara puede trabajar sobre conectividad 4G.</span></div><div class="p"><b>🔌 ¿Cuánto cable necesito?</b><span>El sistema elimina la necesidad de cableado de red y alimentación.</span></div><div class="p"><b>🏗 ¿Y si es temporal?</b><span>Una solución diseñada para desplegarse en ubicaciones remotas.</span></div></div></div></section>
 
-<section class="technology reveal" id="tecnologia"><div class="container two"><div><div class="kicker">La arquitectura</div><h2>Cuatro piezas.<br>Una solución autónoma.</h2><p class="copy">La propuesta no es “una cámara con panel”. Es un sistema donde la generación de energía, el almacenamiento, la videovigilancia y la conectividad trabajan juntos.</p></div>
-<div class="tech-visual"><div class="node n1"><div class="icon">☀️</div><b>PANEL SOLAR</b><span>8 W</span></div><div class="node n2"><div class="icon">🔋</div><b>BATERÍA</b><span>9000 mAh</span></div><div class="node n3"><div class="icon">📷</div><b>CÁMARA HIKVISION</b><span>AOV 24/7</span></div><div class="node n4"><div class="icon">📡</div><b>RED 4G</b><span>SIM Nano</span></div><div class="node n5"><div class="icon">📱</div><b>HIK-CONNECT</b><span>Acceso remoto</span></div><div class="conn l1"></div><div class="conn l2"></div><div class="conn l3"></div><div class="conn l4"></div></div></div></section>
+<section class="technology reveal" id="tecnologia"><div class="container two"><div><div class="kicker">La arquitectura</div><h2>Cinco piezas.<br>Una solución autónoma.</h2><p class="copy">La propuesta no es “una cámara con panel”. Es un sistema donde la generación de energía, el almacenamiento, la videovigilancia y la conectividad trabajan juntos.</p></div>
+<div class="tech-visual">
+  <svg class="arch-svg" viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="archLine" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#4fa5ff" stop-opacity="0"/>
+        <stop offset=".45" stop-color="#4fa5ff" stop-opacity=".9"/>
+        <stop offset="1" stop-color="#9b8bff" stop-opacity=".12"/>
+      </linearGradient>
+    </defs>
+    <path d="M 255 145 C 335 175, 380 225, 435 290"/>
+    <path d="M 745 145 C 665 175, 620 225, 565 290"/>
+    <path d="M 255 475 C 335 445, 380 390, 435 335"/>
+    <path d="M 745 475 C 665 445, 620 390, 565 335"/>
+  </svg>
+
+  <div class="node n1">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>
+      </svg>
+    </div>
+    <b>PANEL SOLAR</b><span>8 W</span>
+  </div>
+
+  <div class="node n2">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+        <rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 2h6M9 17h6"/><path d="M19 8h2"/>
+      </svg>
+    </div>
+    <b>BATERÍA</b><span>9000 mAh</span>
+  </div>
+
+  <div class="node n3">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="4" y="7" width="16" height="10" rx="4"/><circle cx="12" cy="12" r="2.7"/><path d="M7 7V5M17 7V5"/>
+      </svg>
+    </div>
+    <b>CÁMARA HIKVISION</b><span>AOV 24/7</span>
+  </div>
+
+  <div class="node n4">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M7 13a7 7 0 0 1 10 0"/><path d="M9.5 15.5a3.5 3.5 0 0 1 5 0"/><circle cx="12" cy="18" r="1"/>
+        <path d="M12 4v7"/><path d="M9 7a4.2 4.2 0 0 1 6 0"/>
+      </svg>
+    </div>
+    <b>RED 4G</b><span>SIM Nano</span>
+  </div>
+
+  <div class="node n5">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <rect x="7" y="3" width="10" height="18" rx="2"/><path d="M10 6h4M10 18h4"/>
+        <circle cx="10" cy="10" r="1"/><circle cx="14" cy="10" r="1"/><circle cx="10" cy="13" r="1"/><circle cx="14" cy="13" r="1"/>
+      </svg>
+    </div>
+    <b>HIK-CONNECT</b><span>Acceso remoto</span>
+  </div>
+  <div class="arch-caption">ENERGÍA · CONECTIVIDAD · VIDEO · ACCESO</div>
+</div></div></section>
 
 <section><div class="container aov"><div><div class="kicker">Always-On Video</div><div class="aovbig">AOV<span>.</span></div><div class="aov-sub">La diferencia está en no depender de un evento para empezar a registrar.</div><p class="copy" style="margin-top:20px">Hikvision plantea AOV para mantener video continuo con consumo optimizado, una característica clave cuando la energía disponible proviene de un panel solar y una batería.</p></div>
 <div class="metric-grid"><div class="metric"><strong>24/7</strong><span>Grabación continua</span></div><div class="metric"><strong>4G</strong><span>Conectividad LTE</span></div><div class="metric"><strong>8 W</strong><span>Panel solar</span></div><div class="metric"><strong>9 Ah</strong><span>Batería de litio</span></div></div></div></section>
