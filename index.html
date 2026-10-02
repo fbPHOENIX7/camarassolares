@@ -86,9 +86,9 @@ background-size:auto,70px 70px,70px 70px;mask-image:linear-gradient(to bottom,bl
 .metric strong{font-variant-numeric:tabular-nums}
 .buy,.btn,.navcta{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
 .buy:hover,.primary:hover,.navcta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(79,165,255,.13)}
-.partner-logo{position:relative;overflow:hidden}
-.partner-logo:after{content:"";position:absolute;inset:-30%;background:conic-gradient(from 90deg,transparent 0 72%,rgba(79,165,255,.08) 79%,transparent 84%);animation:partner-sweep 8s linear infinite}
-@keyframes partner-sweep{to{transform:rotate(360deg)}}
+.partner-logo{position:relative;overflow:hidden;min-height:270px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,#0b1017,#070a0f)}
+.partner-logo img{position:absolute;left:50%;top:50%;width:340px;height:340px;max-width:none;object-fit:contain;transform:translate(-50%,-50%);filter:none}
+.partner-logo:after{display:none}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.cursor-dot,.cursor-ring{display:none}}
 
 
