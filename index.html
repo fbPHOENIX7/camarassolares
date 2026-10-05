@@ -176,6 +176,62 @@ box-shadow:0 16px 35px rgba(0,0,0,.20);transition:transform .35s ease,border-col
 .video-badge{position:absolute;left:20px;bottom:20px;z-index:3;display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(6,10,15,.72);backdrop-filter:blur(10px);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#d9e1ea}
 .video-badge span{width:7px;height:7px;border-radius:50%;background:#73e0b9;box-shadow:0 0 12px rgba(115,224,185,.9)}
 @media(max-width:850px){.video-showcase{padding:56px 0 24px}.video-showcase .video-head{display:block}.video-showcase .copy{margin-top:14px}}
+
+/* Final partner logo correction */
+.partner-logo{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:300px!important;
+  padding:32px 34px 46px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:18px!important;
+  border:1px solid var(--line)!important;
+  border-radius:28px!important;
+  background:linear-gradient(145deg,#0b1017,#070a0f)!important;
+}
+.partner-logo img{
+  position:relative!important;
+  left:auto!important;
+  top:auto!important;
+  z-index:2!important;
+  display:block!important;
+  width:min(390px,86%)!important;
+  height:auto!important;
+  max-width:100%!important;
+  margin:0!important;
+  object-fit:contain!important;
+  transform:none!important;
+  filter:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  background:transparent!important;
+}
+.partner-logo:after{
+  content:""!important;
+  position:absolute!important;
+  z-index:1!important;
+  left:50%!important;
+  bottom:54px!important;
+  width:min(390px,86%)!important;
+  aspect-ratio:204 / 28!important;
+  transform:translateX(-50%) translateY(78%) scaleY(-1)!important;
+  transform-origin:center!important;
+  background:url("https://upload.wikimedia.org/wikipedia/commons/9/96/Hikvision_logo.png") center/contain no-repeat!important;
+  opacity:.16!important;
+  filter:blur(.15px)!important;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent 72%)!important;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent 72%)!important;
+  pointer-events:none!important;
+}
+.partner-logo .partner-badge{
+  position:relative!important;
+  z-index:3!important;
+  margin-top:8px!important;
+}
 </style>
 </head>
 <body><div class="scroll-progress"></div><div class="cursor-dot"></div><div class="cursor-ring"></div>
@@ -277,7 +333,7 @@ box-shadow:0 16px 35px rgba(0,0,0,.20);transition:transform .35s ease,border-col
 <article class="pcard violet"><div class="pmedia"><img src="https://ftp3.syscom.mx/cdn-cgi/image/format=auto,quality=90,width=1000,background=transparent/usuarios/fotos/BancoFotografiasSyscom/HIKVISION/DS2CFSP8D/4G/portada_0S400.PNG" alt="Hikvision DS-2CFSP8-D/4G/LA"></div><div class="pbody"><div class="model">DS-2CFSP8-D/4G/LA</div><h3>Doble lente para ver el escenario y seguir el detalle.</h3><p>4 MP + 4 MP, lente fija + lente PT, AOV 24/7, 4G LTE, panel solar de 8 W y batería de 9000 mAh.</p><div class="tags"><span class="tag">4 MP + 4 MP</span><span class="tag">Doble lente</span><span class="tag">PT</span><span class="tag">AOV 24/7</span><span class="tag">4G LTE</span><span class="tag">9000 mAh</span></div><a class="buy" href="https://www.productos-info.com/tienda/castelecom/productos/249795" target="_blank">VER PUBLICACIÓN EN INTEGRA →</a></div></article>
 </div></div></section>
 
-<section class="partner reveal"><div class="container partner-grid"><div><div class="kicker">Confianza para tu proyecto</div><h2>No es solo el equipo.<br>Es quién está detrás.</h2><p class="copy">Somos partners oficiales de Hikvision. Te ayudamos a definir la solución adecuada para cada escenario de instalación.</p><div class="ctas"><a class="btn primary" href="#contacto">HABLAR CON INTEGRA →</a></div></div><div class="partner-logo"><img src="assets/hikvision-official-logo.webp" alt="Hikvision Certified Partner"><div class="partner-badge">PARTNER OFICIAL · PRODUCTOS INTEGRA</div></div></div></section>
+<section class="partner reveal"><div class="container partner-grid"><div><div class="kicker">Confianza para tu proyecto</div><h2>No es solo el equipo.<br>Es quién está detrás.</h2><p class="copy">Somos partners oficiales de Hikvision. Te ayudamos a definir la solución adecuada para cada escenario de instalación.</p><div class="ctas"><a class="btn primary" href="#contacto">HABLAR CON INTEGRA →</a></div></div><div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Hikvision_logo.png" alt="Hikvision Certified Partner"><div class="partner-badge">PARTNER OFICIAL · PRODUCTOS INTEGRA</div></div></div></section>
 
 <section class="final reveal" id="contacto"><div class="container"><div class="kicker">Tu próximo proyecto</div><h2>¿Tenés un lugar donde el cableado no es la respuesta?</h2><p class="copy">Contanos qué necesitás proteger, dónde está el punto de instalación y qué nivel de cobertura buscás. Te ayudamos a definir la alternativa.</p><div class="ctas"><a class="btn primary" href="https://api.whatsapp.com/send?phone=%2B5491160090159&text=Hola%2C%20tengo%20una%20consulta%20en%20https%3A%2F%2Fproductosintegra.com%2Ftienda-2%2F" target="_blank">QUIERO ASESORAMIENTO →</a><a class="btn ghost" href="#camaras">VER CÁMARAS</a></div></div></section>
 
